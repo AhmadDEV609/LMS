@@ -5,7 +5,7 @@ const Hero = () => {
         <>
             <section className="relative overflow-hidden bg-linear-to-br from-sky-50 via-white to-cyan-50 py-20 lg:py-28">
 
-                {/* Background Blur */}
+
                 <div className="absolute top-0 left-0 w-72 h-72 bg-sky-300/20 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-300/20 rounded-full blur-3xl"></div>
 
@@ -13,7 +13,7 @@ const Hero = () => {
 
                     <div className="grid lg:grid-cols-2 items-center gap-16">
 
-                        {/* Left Content */}
+
                         <div>
 
                             <div className="inline-flex items-center gap-2 bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-sky-200">
@@ -35,7 +35,7 @@ const Hero = () => {
                                 all in one powerful ecosystem.
                             </p>
 
-                            {/* Buttons */}
+
                             <div className="flex flex-wrap items-center gap-4 mt-10">
 
                                 <button className="px-8 py-4 rounded-2xl bg-linear-to-r from-sky-500 to-cyan-500 text-white font-semibold shadow-lg shadow-sky-200 hover:scale-105 hover:shadow-sky-300 transition duration-300 cursor-pointer">
@@ -47,7 +47,7 @@ const Hero = () => {
                                 </button>
                             </div>
 
-                            {/* Trusted Brands */}
+
                             <div className="mt-14">
                                 <p className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-6">
                                     Trusted by learners from
@@ -95,10 +95,10 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        {/* Right Side */}
+
                         <div className="relative">
 
-                            {/* Main Card */}
+
                             <div className="relative bg-white/80 backdrop-blur-xl border border-white shadow-[0_20px_80px_rgba(14,165,233,0.15)] rounded-4xl p-6 md:p-8">
 
                                 <img
@@ -107,7 +107,7 @@ const Hero = () => {
                                     className="rounded-3xl w-full h-125 object-cover"
                                 />
 
-                                {/* Floating Stats */}
+
                                 <div className="absolute -left-6 top-10 bg-white shadow-xl rounded-2xl p-4 border border-sky-100">
                                     <h3 className="text-3xl font-black text-sky-500">
                                         25K+
@@ -126,7 +126,6 @@ const Hero = () => {
                                     </p>
                                 </div>
 
-                                {/* Small Floating Badge */}
                                 <div className="absolute top-1/2 -right-8 bg-linear-to-r from-sky-500 to-cyan-500 text-white px-5 py-3 rounded-2xl shadow-2xl font-semibold">
                                     ⭐ Best LMS Platform
                                 </div>

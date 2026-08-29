@@ -10,7 +10,7 @@ const MyEnrollments = () => {
 
     const navigate = useNavigate();
 
-    // 1. Get enrollments
+
     const Courses = async () => {
         try {
             setLoading(true);
@@ -66,7 +66,7 @@ const MyEnrollments = () => {
         Courses();
     }, []);
 
-    // Loading skeleton (optional, but here spinner)
+
     if (loading) {
         return (
             <div className="min-h-screen bg-gray-50">
@@ -178,7 +178,7 @@ const MyEnrollments = () => {
                             })}
                         </div>
                     ) : (
-                        /* Empty State */
+
                         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-16 text-center">
                             <div className="text-5xl mb-4">📭</div>
                             <h2 className="text-2xl font-bold text-gray-800 mb-2">

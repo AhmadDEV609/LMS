@@ -66,7 +66,7 @@ const getCourse = asyncHandler(async (req, res, next) => {
         filter.title = { $regex: search, $options: 'i' }
     }
     if (category) {
-        filter.category = catagory
+        filter.category = category
     }
     const courses = await Course.paginate(filter, option)
     res.status(200).json({

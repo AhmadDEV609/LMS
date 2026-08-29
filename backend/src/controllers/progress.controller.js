@@ -125,10 +125,7 @@ const courseProgress = asyncHandler(async (req, res) => {
 
     const completedCount = completedCourseVideos.length;
 
-    const progressPercentage =
-        totalLectures > 0
-            ? (completedCount / totalLectures) * 100
-            : 0;
+    const progressPercentage = totalLectures > 0 ? (completedCount / totalLectures) * 100 : 0;
 
     res.status(200).json({
         success: true,

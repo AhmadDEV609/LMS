@@ -23,7 +23,7 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="flex items-center justify-between h-20">
 
-                        {/* Logo */}
+
                         <Link
                             to="/"
                             className="text-3xl font-extrabold tracking-tight"
@@ -62,7 +62,7 @@ const Navbar = () => {
                             </Link>
                         </div>
 
-                        {/* Right Side */}
+
 
                         <div className="flex items-center gap-4">
                             {user ? (
@@ -117,7 +117,6 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Mobile Menu */}
                     <div
                         className={`lg:hidden overflow-hidden transition-all duration-500 ${mobileMenu ? 'max-h-96 py-4' : 'max-h-0'}`}
                     >

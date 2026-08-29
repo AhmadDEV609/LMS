@@ -36,7 +36,7 @@ const Course = () => {
         <>
             <Navbar />
             <div className="min-h-screen bg-gray-50">
-                {/* Banner */}
+
                 <div className="relative bg-linear-to-r from-sky-600 to-cyan-600 py-16 px-4 overflow-hidden">
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                     <div className="max-w-7xl mx-auto text-center relative">
@@ -120,7 +120,7 @@ const Course = () => {
                             </div>
                         </div>
 
-                        {/* Courses Grid */}
+
                         <div className="lg:col-span-3">
                             {loading ? (
                                 <div className="flex flex-col justify-center items-center h-96">

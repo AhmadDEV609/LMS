@@ -49,7 +49,7 @@ const EnrollmentPage = () => {
 
     return (
         <div className="min-h-screen bg-slate-50 p-6">
-            {/* Header */}
+
             <div className="mb-8">
                 <h1 className="text-4xl font-bold text-sky-600">
                     Student Enrollments
@@ -59,7 +59,7 @@ const EnrollmentPage = () => {
                 </p>
             </div>
 
-            {/* Stats */}
+
             <div className="bg-white rounded-2xl shadow-md p-6 mb-8 border border-sky-100">
                 <h2 className="text-lg font-semibold text-gray-700">
                     Total Enrollments || Total Earning
@@ -72,7 +72,7 @@ const EnrollmentPage = () => {
             </div>
 
 
-            {/* Empty State */}
+
             {enrollments.length === 0 ? (
                 <div className="bg-white rounded-2xl shadow-md p-10 text-center">
                     <h2 className="text-2xl font-semibold text-gray-700">
@@ -89,14 +89,14 @@ const EnrollmentPage = () => {
                             key={item._id}
                             className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-sky-100 overflow-hidden"
                         >
-                            {/* Card Top */}
+
                             <div className="bg-linear-to-r from-sky-500 to-cyan-400 p-5">
                                 <h2 className="text-white text-xl font-bold">
                                     {item.courseID?.title}
                                 </h2>
                             </div>
 
-                            {/* Content */}
+
                             <div className="p-5 space-y-3">
                                 <div>
                                     <p className="text-gray-500 text-sm">

@@ -20,9 +20,7 @@ const CourseLearning = () => {
 
     const videoRef = useRef(null);
 
-    // =========================
-    // GET VIDEOS
-    // =========================
+
     const getVideos = async () => {
         try {
             const res = await api.get(
@@ -42,9 +40,7 @@ const CourseLearning = () => {
         getVideos();
     }, []);
 
-    // =========================
-    // PROGRESS TRACKING
-    // =========================
+
     const calculateProgress = async () => {
         if (!selectedVideo?._id) return;
         try {
@@ -121,9 +117,6 @@ const CourseLearning = () => {
         courseProgress();
     }, []);
 
-    // =========================
-    // AI CHAT
-    // =========================
     const askQuestion = async () => {
         if (!question.trim()) return;
         const userQuestion = question;
@@ -150,16 +143,14 @@ const CourseLearning = () => {
         }
     };
 
-    // =========================
-    // UI
-    // =========================
+
     return (
         <>
             <Navbar />
             <div className="min-h-screen bg-gray-50 flex flex-col lg:flex-row">
-                {/* LEFT SIDE – Video & Info */}
+
                 <div className="flex-1 p-4 lg:p-6">
-                    {/* Video Player */}
+
                     <div className="bg-black rounded-2xl overflow-hidden shadow-xl">
                         <video
                             src={selectedVideo?.videoUrl}
@@ -170,13 +161,13 @@ const CourseLearning = () => {
                         />
                     </div>
 
-                    {/* Video Details Card */}
+
                     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 mt-6 p-5">
                         <h2 className="text-xl md:text-2xl font-bold text-gray-800">
                             {selectedVideo?.title}
                         </h2>
                         <div className="flex flex-wrap items-center gap-4 mt-4">
-                            {/* Progress Indicator */}
+
                             <div className="flex items-center gap-2">
                                 <div className="w-16 h-16 relative">
                                     <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
@@ -231,7 +222,7 @@ const CourseLearning = () => {
                     </div>
                 </div>
 
-                {/* RIGHT SIDEBAR – Course Videos List */}
+
                 <div className="w-full lg:w-96 bg-white border-l border-gray-200 p-4 lg:p-6 overflow-y-auto">
                     <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
                         📚 Course Content
@@ -296,7 +287,7 @@ const CourseLearning = () => {
                             </button>
                         </div>
 
-                        {/* Messages */}
+
                         <div className="h-80 overflow-y-auto p-4 space-y-3 bg-gray-50">
                             {messages.length === 0 && (
                                 <div className="text-center text-gray-400 mt-10">
@@ -332,7 +323,6 @@ const CourseLearning = () => {
                             )}
                         </div>
 
-                        {/* Input Area */}
                         <div className="p-3 border-t border-gray-200 bg-white">
                             <div className="flex gap-2">
                                 <input
@@ -358,7 +348,7 @@ const CourseLearning = () => {
                     </div>
                 )}
 
-                {/* Toggle Button */}
+
                 <button
                     onClick={() => setChatOpen(!chatOpen)}
                     className="bg-linear-to-r from-sky-500 to-cyan-500 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center text-2xl relative"

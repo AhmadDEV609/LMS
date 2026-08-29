@@ -85,7 +85,6 @@ export default function InstructorDashboard() {
     return (
         <div className="flex min-h-screen bg-sky-50">
 
-            {/* sidebar */}
             <>
                 {sidebarOpen && (
                     <div
@@ -102,7 +101,7 @@ export default function InstructorDashboard() {
                     ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
                 `}>
 
-                    {/* mobile sidebar */}
+
                     <div className="flex justify-between items-center mb-8 md:hidden">
                         <h2 className="text-xl font-bold text-sky-700">
                             LMS Panel
@@ -113,7 +112,6 @@ export default function InstructorDashboard() {
                         </button>
                     </div>
 
-                    {/* DESKTOP TITLE */}
                     <h2 className="hidden md:block text-xl font-bold text-sky-700 mb-8">
                         LMS Panel
                     </h2>
@@ -136,7 +134,7 @@ export default function InstructorDashboard() {
                 </aside>
             </>
 
-            {/* main content*/}
+
             <div className="flex-1 flex flex-col">
 
 

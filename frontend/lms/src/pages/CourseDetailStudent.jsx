@@ -105,14 +105,14 @@ const CourseDetailStudent = () => {
         <>
             <Navbar />
 
-            {/* Main Content */}
+
             <div className="min-h-screen bg-gray-50 py-10">
                 <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-10">
 
-                    {/* LEFT SIDE (span 2 columns) */}
+
                     <div className="lg:col-span-2 space-y-8">
 
-                        {/* Course Title & Category */}
+
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
                             <span className="inline-block bg-sky-100 text-sky-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide mb-3">
                                 {course?.category}
@@ -196,13 +196,13 @@ const CourseDetailStudent = () => {
                             </div>
                         </div>
 
-                        {/* Locked Lectures (Static Representation) */}
+
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6">
                                 All Lectures
                             </h2>
                             <div className="space-y-3">
-                                {/* Static locked lectures – Udemy style */}
+
                                 {[1, 2, 3].map((item) => (
                                     <div
                                         key={item}
@@ -227,10 +227,10 @@ const CourseDetailStudent = () => {
                         </div>
                     </div>
 
-                    {/* RIGHT SIDEBAR (span 1 column) */}
+
                     <div className="lg:col-span-1">
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-6 sticky top-6">
-                            {/* Course Thumbnail */}
+
                             <img
                                 src={course?.courseThumbnail}
                                 alt={course?.title}
@@ -241,9 +241,8 @@ const CourseDetailStudent = () => {
                                 Course Details
                             </h2>
 
-                            {/* Details Table */}
                             <div className="space-y-4 text-sm">
-                                {/* Price */}
+
                                 <div className="flex justify-between items-center">
                                     <span className="text-gray-500">Price</span>
                                     <span className="text-lg font-bold text-sky-600">
@@ -251,7 +250,7 @@ const CourseDetailStudent = () => {
                                     </span>
                                 </div>
 
-                                {/* Rating (Clickable Stars) */}
+
                                 <div className="flex justify-between items-center">
                                     <span className="text-gray-500">Your Rating</span>
                                     <div className="flex items-center gap-1">
@@ -270,7 +269,7 @@ const CourseDetailStudent = () => {
                                     </div>
                                 </div>
 
-                                {/* Average Rating */}
+
                                 <div className="flex justify-between items-center">
                                     <span className="text-gray-500">Avg Rating</span>
                                     <span className="font-semibold text-yellow-600 flex items-center gap-1">
@@ -298,7 +297,7 @@ const CourseDetailStudent = () => {
                                 </div>
                             </div>
 
-                            {/* Enroll Button */}
+
                             <button
                                 onClick={handleEnroll}
                                 className="w-full mt-6 bg-sky-600 hover:bg-sky-700 active:scale-[0.98] text-white py-3.5 rounded-xl font-semibold transition duration-200 shadow-md shadow-sky-200"
