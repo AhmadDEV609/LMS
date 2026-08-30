@@ -8,7 +8,7 @@ import { globalLimiter } from './middleware/rateLimit.middleware.js';
 const app = express();
 app.set("trust proxy", 1);
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: "https://lms-frontend-f7dowyogt-ahmad-s-projects20.vercel.app",
     credentials: true
 }));
 app.use(helmet());
