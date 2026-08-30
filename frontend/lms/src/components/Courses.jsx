@@ -1,12 +1,13 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import api from '../api/axios'
 export const Courses = () => {
 
     const [courseData, setcourseData] = useState([])
     const courses = async () => {
         try {
-            const res = await axios.get("http://localhost:5000/v1/courses/featured")
+            const res = await api.get("/v1/courses/featured")
             setcourseData(res?.data?.courses)
         } catch (error) {
             console.log(error)
