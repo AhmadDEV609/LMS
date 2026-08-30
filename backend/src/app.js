@@ -19,7 +19,7 @@ app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use('/public/images', express.static('public/images'));
+
 // app.use(globalLimiter);
 // routes
 import user from './routes/user.route.js';
