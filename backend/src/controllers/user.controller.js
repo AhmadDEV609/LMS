@@ -7,6 +7,7 @@ import { generateAccessToken, generateRefreshToken } from "../helper/generate.to
 
 
 const uploadToCloudinary = (buffer) => {
+    console.log(" CLOUDINARY BUFFER UPLOAD");
     return new Promise((resolve, reject) => {
 
         const stream = cloudinary.uploader.upload_stream(
@@ -32,7 +33,8 @@ const uploadToCloudinary = (buffer) => {
 
 
 const signup = asyncHandler(async (req, res, next) => {
-
+    console.log(" NEW SIGNUP CONTROLLER");
+    console.log("FILE:", req.file);
     const {
         name,
         email,
