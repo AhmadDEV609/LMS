@@ -6,7 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { globalLimiter } from './middleware/rateLimit.middleware.js';
 const app = express();
-
+app.set("trust proxy", 1);
 app.use(cors({
     origin: process.env.FRONTEND_URL || "http://localhost:5173",
     credentials: true
