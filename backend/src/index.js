@@ -18,3 +18,5 @@ app.listen(port, () => {
         console.log(error)
     }
 })
+
+export default app;
