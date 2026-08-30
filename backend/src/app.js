@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import helmet from "helmet";
 import morgan from "morgan";
-import { globalLimiter } from './middleware/rateLimit.middleware.js';
+// import { globalLimiter } from './middleware/rateLimit.middleware.js';
 const app = express();
 app.set("trust proxy", 1);
 app.use(cors({
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/public/images', express.static('public/images'));
-app.use(globalLimiter);
+// app.use(globalLimiter);
 // routes
 import user from './routes/user.route.js';
 import { courseRoute } from './routes/course.route.js';
