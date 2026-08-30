@@ -85,7 +85,7 @@ const Navbar = () => {
                                             </div>
 
                                             <Link
-                                                to="profile"
+
                                                 className="block px-3 py-2 hover:bg-sky-50"
                                             >
                                                 Profile

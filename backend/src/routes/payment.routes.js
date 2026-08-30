@@ -12,7 +12,7 @@ router.post("/create", auth, createCheckoutSession);
 
 // WEBHOOK 
 router.post(
-    "/webhook", async (req, res) => {
+    "/webhook", express.raw({ type: "application/json" }), async (req, res) => {
         const sig = req.headers["stripe-signature"];
 
         let event;
