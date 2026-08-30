@@ -99,7 +99,7 @@ const getAllCourse = asyncHandler(async (req, res, next) => {
     }
 
     res.status(200).json({
-        message: "course is here",
+        message: "course is heres",
         course
     })
 })
