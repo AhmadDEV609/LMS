@@ -1,34 +1,12 @@
 import { Users } from "../models/user.model.js";
 import asyncHandler from "../utils/asyncHandler.js";
-import jwt from "jsonwebtoken";
+import uploadToCloudinary from "../helper/uploadToCloudinary.helper.js";
 import bcrypt from "bcrypt";
 import cloudinary from "../config/cloudinary.js";
 import { generateAccessToken, generateRefreshToken } from "../helper/generate.token.helper.js";
 
 
-const uploadToCloudinary = (buffer) => {
-    console.log(" CLOUDINARY BUFFER UPLOAD");
-    return new Promise((resolve, reject) => {
 
-        const stream = cloudinary.uploader.upload_stream(
-            {
-                folder: "profileImages",
-                resource_type: "image",
-            },
-            (error, result) => {
-
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(result);
-                }
-
-            }
-        );
-
-        stream.end(buffer);
-    });
-};
 
 
 
@@ -68,7 +46,8 @@ const signup = asyncHandler(async (req, res, next) => {
     if (profileImage) {
 
         const result = await uploadToCloudinary(
-            profileImage.buffer
+            profileImage.buffer,
+            "profileImages"
         );
 
         image = result.secure_url;
@@ -488,7 +467,8 @@ const updateImage = asyncHandler(async (req, res) => {
 
     // Upload new image
     const uploadResult = await uploadToCloudinary(
-        req.file.buffer
+        req.file.buffer,
+        "profileImages"
     );
 
 
@@ -569,7 +549,8 @@ const deleteProfile = asyncHandler(async (req, res) => {
 
     // Delete user
     await Users.findByIdAndDelete(
-        req.user.id
+        req.user.id,
+        "profileImages"
     );
 
 
