@@ -40,7 +40,7 @@ export const createCheckoutSession = async (req, res) => {
                 courseId: courseId.toString(),
             },
 
-            success_url: `${process.env.CLIENT_URL}/my/enrollment`,
+            success_url: `${process.env.CLIENT_URL}`,
             cancel_url: `${process.env.CLIENT_URL}/cancel`,
         });
 
