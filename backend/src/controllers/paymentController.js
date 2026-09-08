@@ -40,7 +40,7 @@ export const createCheckoutSession = async (req, res) => {
                 courseId: courseId.toString(),
             },
 
-            success_url: "https://lms-frontend-1q9xl0b8u-ahmad-s-projects20.vercel.app/my/enrollment",
+            success_url: `${process.env.CLIENT_URL}/my/enrollment`,
             cancel_url: `${process.env.CLIENT_URL}/cancel`,
         });
 
