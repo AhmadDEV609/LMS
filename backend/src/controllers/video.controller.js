@@ -2,7 +2,9 @@ import asyncHandler from "../utils/asyncHandler.js";
 import { Videos } from "../models/video.model.js";
 import { Course } from "../models/course.model.js";
 import cloudinary from "../config/cloudinary.js";
-import fs from 'fs'
+import { uploadToCloudinaryVideos } from "../helper/uploadToCloudinary.helper.js";
+import { uploadToCloudinary } from "../helper/uploadToCloudinary.helper.js";
+
 
 const addVideos = asyncHandler(async (req, res, next) => {
 
@@ -17,8 +19,8 @@ const addVideos = asyncHandler(async (req, res, next) => {
         return next(err)
     }
 
-    const thumbnail = req.files.thumbnail[0]
-    const video = req.files.videoUrl[0]
+    const thumbnail = req.files?.thumbnail?.[0];
+    const video = req.files?.videoUrl?.[0];
 
     if (!thumbnail) {
         const err = new Error('image is not upload')
@@ -31,26 +33,9 @@ const addVideos = asyncHandler(async (req, res, next) => {
         return next(err)
     }
 
-    const ThumbnailResult = await cloudinary.uploader.upload(
-        thumbnail.path,
-        {
-            folder: 'videoThumbnail',
-            resource_type: 'image'
-        }
-    )
-    fs.unlinkSync(thumbnail.path)
+    const ThumbnailResult = await uploadToCloudinary(thumbnail.buffer, 'videoThumbnail')
 
-
-
-
-    const videoResult = await cloudinary.uploader.upload(
-        video.path,
-        {
-            folder: 'video',
-            resource_type: 'video'
-        }
-    )
-    fs.unlinkSync(video.path)
+    const videoResult = await uploadToCloudinaryVideos(video.buffer, 'video')
 
 
 

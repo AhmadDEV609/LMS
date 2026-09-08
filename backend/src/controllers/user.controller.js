@@ -1,6 +1,6 @@
 import { Users } from "../models/user.model.js";
 import asyncHandler from "../utils/asyncHandler.js";
-import uploadToCloudinary from "../helper/uploadToCloudinary.helper.js";
+import { uploadToCloudinary } from "../helper/uploadToCloudinary.helper.js";
 import bcrypt from "bcrypt";
 import cloudinary from "../config/cloudinary.js";
 import { generateAccessToken, generateRefreshToken } from "../helper/generate.token.helper.js";

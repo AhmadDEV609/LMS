@@ -2,6 +2,7 @@ import { Course } from "../models/course.model.js";
 import asyncHandler from "../utils/asyncHandler.js";
 import cloudinary from "../config/cloudinary.js";
 import { Videos } from "../models/video.model.js";
+import { uploadToCloudinary } from "../helper/uploadToCloudinary.helper.js";
 import fs from 'fs'
 import { paginate } from "mongoose-paginate-v2";
 import { enrollment } from "../models/enrollment.model.js";
@@ -18,14 +19,11 @@ const addCourse = asyncHandler(async (req, res, next) => {
         return next(err)
     }
 
-    const courseThumbnailResult = await cloudinary.uploader.upload(
-        courseThumbnail.path,
-        {
-            folder: 'courseThumbnail',
-            resource_type: 'image'
-        }
-    )
-    fs.unlinkSync(courseThumbnail.path)
+    const courseThumbnailResult = await uploadToCloudinary(courseThumbnail.buffer, 'courseThumbnail')
+
+
+
+
 
 
 
