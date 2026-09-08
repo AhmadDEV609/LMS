@@ -17,7 +17,9 @@ export const createCheckoutSession = async (req, res) => {
         if (!course) {
             return res.status(404).json({ message: "Course not found" });
         }
+        const successUrl = `${process.env.CLIENT_URL}/my/enrollment`;
 
+        console.log(" SUCCESS URL:", successUrl);
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ["card"],
             mode: "payment",
